@@ -10,8 +10,8 @@ Using a dual grid system has the following advantages:
 ![Dual grid image by Oskar Stålberg](https://pbs.twimg.com/media/FBk2PhcXsAETv1x?format=jpg&name=large)
 
 ### References
-[Dual grid Twitter post by Oskar Stålberg](https://x.com/OskSta/status/1448248658865049605)
-['Programming Terrain Generation' video by ThinMatrix](https://www.youtube.com/watch?v=buKQjkad2I0)
-['Drawing Fewer Tiles' video by jess:codes](https://www.youtube.com/watch?v=jEWFSv3ivTg)
+- [Dual grid Twitter post by Oskar Stålberg](https://x.com/OskSta/status/1448248658865049605)
+- ['Programming Terrain Generation' video by ThinMatrix](https://www.youtube.com/watch?v=buKQjkad2I0)
+- ['Drawing Fewer Tiles' video by jess:codes](https://www.youtube.com/watch?v=jEWFSv3ivTg)
 
 If you have any feedback, feel free to contact me at glitchedinorbit[at]gmail.com
