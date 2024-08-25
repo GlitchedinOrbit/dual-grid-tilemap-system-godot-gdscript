@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://bj2e3y6dtnn83"]
+
+[ext_resource type="Texture2D" uid="uid://bglmjjbb1nivg" path="res://assets/Tilemap.png" id="1_ni7nt"]
+[ext_resource type="Script" path="res://scripts/tilemap.gd" id="2_7qj53"]
+[ext_resource type="Texture2D" uid="uid://cltv5pxsbajws" path="res://assets/TilemapPlaceholders.png" id="3_pypvy"]
+[ext_resource type="Texture2D" uid="uid://yuxn8elmkepi" path="res://assets/SelectionIndicator.png" id="4_nti6n"]
+[ext_resource type="Script" path="res://scripts/cursor.gd" id="5_00xh7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eivu5"]
+texture = ExtResource("1_ni7nt")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ih4x"]
+texture = ExtResource("3_pypvy")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hneuh"]
+sources/0 = SubResource("TileSetAtlasSource_eivu5")
+sources/1 = SubResource("TileSetAtlasSource_6ih4x")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s05eq"]
+texture = ExtResource("1_ni7nt")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_77ea1"]
+sources/0 = SubResource("TileSetAtlasSource_s05eq")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjwxa"]
+atlas = ExtResource("4_nti6n")
+region = Rect2(0, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayys0"]
+atlas = ExtResource("4_nti6n")
+region = Rect2(17, 0, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v82uo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjwxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayys0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="World" type="Node2D"]
+
+[node name="WorldTileMap" type="TileMap" parent="." node_paths=PackedStringArray("offset_tilemap")]
+tile_set = SubResource("TileSet_hneuh")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 393216, 1, 0, 458752, 1, 0, 524288, 65537, 0, 589824, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 393217, 1, 0, 458753, 1, 0, 524289, 65537, 0, 589825, 1, 0, 2, 1, 0, 65538, 65537, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 393218, 1, 0, 458754, 1, 0, 524290, 65537, 0, 589826, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 1, 0, 196611, 1, 0, 262147, 65537, 0, 327683, 65537, 0, 393219, 65537, 0, 458755, 65537, 0, 524291, 65537, 0, 589827, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 1, 0, 196612, 65537, 0, 262148, 65537, 0, 327684, 65537, 0, 393220, 1, 0, 458756, 1, 0, 524292, 1, 0, 589828, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 1, 0, 196613, 65537, 0, 262149, 65537, 0, 327685, 65537, 0, 393221, 65537, 0, 458757, 1, 0, 524293, 1, 0, 589829, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 65537, 0, 262150, 1, 0, 327686, 1, 0, 393222, 65537, 0, 458758, 1, 0, 524294, 1, 0, 589830, 1, 0, 7, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 65537, 0, 262151, 1, 0, 327687, 1, 0, 393223, 65537, 0, 458759, 1, 0, 524295, 65537, 0, 589831, 1, 0, 8, 1, 0, 65544, 65537, 0, 131080, 65537, 0, 196616, 65537, 0, 262152, 1, 0, 327688, 1, 0, 393224, 65537, 0, 458760, 65537, 0, 524296, 65537, 0, 589832, 1, 0, 9, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0, 393225, 65537, 0, 458761, 1, 0, 524297, 1, 0, 589833, 1, 0, 10, 1, 0, 65546, 1, 0, 131082, 1, 0, 196618, 1, 0, 262154, 1, 0, 327690, 1, 0, 393226, 1, 0, 458762, 1, 0, 524298, 1, 0, 589834, 1, 0, 11, 1, 0, 65547, 65537, 0, 131083, 65537, 0, 196619, 1, 0, 262155, 1, 0, 327691, 1, 0, 393227, 1, 0, 458763, 1, 0, 524299, 1, 0, 589835, 1, 0, 12, 1, 0, 65548, 65537, 0, 131084, 65537, 0, 196620, 1, 0, 262156, 1, 0, 327692, 1, 0, 393228, 1, 0, 458764, 1, 0, 524300, 1, 0, 589836, 1, 0)
+script = ExtResource("2_7qj53")
+offset_tilemap = NodePath("../OffsetTileMap")
+dirt_placeholder_atlas_coord = Vector2i(1, 0)
+
+[node name="OffsetTileMap" type="TileMap" parent="."]
+position = Vector2(-8, -8)
+tile_set = SubResource("TileSet_77ea1")
+format = 2
+
+[node name="Cursor" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("dual_grid_tilemap")]
+sprite_frames = SubResource("SpriteFrames_v82uo")
+frame_progress = 0.0325107
+script = ExtResource("5_00xh7")
+dual_grid_tilemap = NodePath("../WorldTileMap")
