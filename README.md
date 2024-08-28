@@ -15,3 +15,7 @@ Using a dual grid system has the following advantages:
 - ['Drawing Fewer Tiles' video by jess:codes](https://www.youtube.com/watch?v=jEWFSv3ivTg)
 
 If you have any feedback, feel free to contact me at glitchedinorbit[at]gmail.com
+
+<a href="https://ko-fi.com/glitchedinorbit">
+    <img width="220" alt="Support me on Ko-fi" src="https://github.com/user-attachments/assets/a9611d0c-848c-4da3-b7b6-908809afd924">
+</a>
