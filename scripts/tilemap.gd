@@ -1,10 +1,11 @@
+@tool
 extends TileMap
 
 enum TileType { None, Grass, Dirt }
 
 @export var offset_tilemap: TileMap
-@export var grass_placeholder_atlas_coord: Vector2i
-@export var dirt_placeholder_atlas_coord: Vector2i
+@export var grass_atlas_coord: Vector2i = Vector2i(2, 1)
+@export var dirt_atlas_coord: Vector2i = Vector2i(0, 3)
 
 var NEIGHBOURS = [Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)]
 
@@ -38,9 +39,21 @@ func _ready() -> void:
 		set_display_tile(Vector2i(coord))
 
 
+func _process(_delta):
+	# Only update in editor mode
+	if Engine.is_editor_hint():
+		update_all_tiles()
+
+
+func update_all_tiles() -> void:
+	# Go through all the used cells and set their display tiles
+	for coord in get_used_cells(0):
+		set_display_tile(Vector2i(coord))
+
+
 func set_tile(coords: Vector2i, atlas_coords: Vector2i) -> void:
 	set_cell(0, coords, 0, atlas_coords)
-	set_display_tile(coords)
+	set_display_tile(coords) # Update the OffsetTileMap immediately
 
 
 func set_display_tile(pos: Vector2i) -> void:
@@ -60,17 +73,28 @@ func calculate_display_tile(coords: Vector2i) -> Vector2i:
 
 	if tile_key in neighbours_to_atlas_coord:
 		return neighbours_to_atlas_coord[tile_key]
-	else:
-		#print("Tile key not found in dictionary, defaulting to (0, 0)")
-		return Vector2i(0, 0)
+		
+	# Check the border tiles and decide on grass or dirt
+	if bottom_right != TileType.None or bottom_left != TileType.None or top_right != TileType.None or top_left != TileType.None:
+		
+		if bottom_right == TileType.Grass or bottom_left == TileType.Grass or top_right == TileType.Grass or top_left == TileType.Grass:
+			#print("Grass border found at ", coords)
+			return Vector2i(2, 1)  # Return grass atlas coordinate
+		else:
+			#print("Dirt border found at ", coords)
+			return Vector2i(0, 3)  # Return dirt atlas coordinate
+	
+	 # If no valid neighbours, return a default tile
+	#print("Tile key not found in dictionary, defaulting to (0, 0) at ", coords)
+	return Vector2i(0, 0)
 
 
 func get_world_tile(coords: Vector2i) -> TileType:
 	var atlas_coord = get_cell_atlas_coords(0, coords)
-	#print("Fetching world tile at ", coords, " with atlas coord: ", atlas_coord)
-	if atlas_coord == grass_placeholder_atlas_coord:
+	#print("Tile at ", coords, " has atlas coords: ", atlas_coord, " on layer 0")
+	if atlas_coord == grass_atlas_coord:
 		return TileType.Grass
-	elif atlas_coord == dirt_placeholder_atlas_coord:
+	elif atlas_coord == dirt_atlas_coord:
 		return TileType.Dirt
 	else:
 		return TileType.None
