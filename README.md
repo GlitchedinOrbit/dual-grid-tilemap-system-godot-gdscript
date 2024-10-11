@@ -4,7 +4,7 @@ A converted version of [jess::codes' C# dual grid system repo](https://github.co
 
 <b> Draw directly in the Editor with the fully filled tilemap tiles (not the placeholders) to see the changes! </b>
 
-<br>
+![](docs/dual-tilemap-demo.gif)
 
 Using a dual grid system has the following advantages:
 - Only 16 (or 6) tiles are required in the tileset
@@ -19,8 +19,6 @@ Using a dual grid system has the following advantages:
 - ['Drawing Fewer Tiles' video by jess:codes](https://www.youtube.com/watch?v=jEWFSv3ivTg)
 
 If you have any feedback, feel free to contact me on [Twitter](https://twitter.com/glitchedinorbit) or at glitchedinorbit[at]gmail.com
-
-<br>
 
 <a href="https://ko-fi.com/glitchedinorbit">
     <img width="220" alt="Support me on Ko-fi" src="https://github.com/user-attachments/assets/a9611d0c-848c-4da3-b7b6-908809afd924">
