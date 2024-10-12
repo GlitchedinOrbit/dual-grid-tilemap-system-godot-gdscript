@@ -1,5 +1,7 @@
 extends Node2D
 
+enum TileType { None, Grass, Dirt, Water, Sand }
+
 @export var dual_grid_tilemap: TileMap
 
 @onready var cursor = $"."
@@ -8,13 +10,14 @@ extends Node2D
 func _ready():
 	cursor.visible = true
 
+
 func _process(_delta: float) -> void:
 	var coords: Vector2i = dual_grid_tilemap.local_to_map(position)
 
 	if Input.is_action_pressed("left_click"):
-		dual_grid_tilemap.set_tile(coords, dual_grid_tilemap.dirt_atlas_coord)
+		dual_grid_tilemap.set_tile(coords, dual_grid_tilemap.terrain_atlas_coords[TileType.Dirt][0])
 	elif Input.is_action_pressed("right_click"):
-		dual_grid_tilemap.set_tile(coords, dual_grid_tilemap.grass_atlas_coord)
+		dual_grid_tilemap.set_tile(coords, dual_grid_tilemap.terrain_atlas_coords[TileType.Grass][0])
 
 
 func _physics_process(_delta: float) -> void:
