@@ -2,9 +2,21 @@
 
 A converted version of [jess::codes' C# dual grid system repo](https://github.com/jess-hammer/dual-grid-tilemap-system-godot) into native GDScript.
 
-<b> Draw directly in the Editor with the fully filled tilemap tiles (not the placeholders) to see the changes! </b>
+<b> Draw directly in the Editor with any of the fully filled tilemap tiles to see the changes! </b>
 
 ![](docs/dual-tilemap-demo.gif)
+
+### Features
+- Draw in the Editor
+- Supports multiple terrains
+  - Grass
+  - Dirt
+  - Water
+  - Sand
+- Easily add new terrain types
+- Draw from multiple atlas coords
+
+![](docs/dual-tilemap-terrains.png)
 
 Using a dual grid system has the following advantages:
 - Only 16 (or 6) tiles are required in the tileset
