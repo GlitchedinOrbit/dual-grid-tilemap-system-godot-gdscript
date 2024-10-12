@@ -28,9 +28,15 @@ Using a dual grid system has the following advantages:
 ### References
 - [Dual grid Twitter post by Oskar Stålberg](https://x.com/OskSta/status/1448248658865049605)
 - ['Programming Terrain Generation' video by ThinMatrix](https://www.youtube.com/watch?v=buKQjkad2I0)
-- ['Drawing Fewer Tiles' video by jess:codes](https://www.youtube.com/watch?v=jEWFSv3ivTg)
+- ['Drawing Fewer Tiles' video by jess::codes](https://www.youtube.com/watch?v=jEWFSv3ivTg)
 
-If you have any feedback, feel free to contact me on [Twitter](https://twitter.com/glitchedinorbit) or at glitchedinorbit[at]gmail.com
+### Contributing
+If you’d like to contribute, please see the [Contributing Guidelines](https://github.com/GlitchedinOrbit/dual-grid-tilemap-system-godot-gdscript/blob/main/CONTRIBUTING.md).
+
+### Contact
+If you have any questions, feedback, or suggestions, feel free to reach out:
+- **Twitter**: [@glitchedinorbit](https://twitter.com/glitchedinorbit)
+- **Email**: glitchedinorbit[at]gmail.com
 
 <a href="https://ko-fi.com/glitchedinorbit">
     <img width="220" alt="Support me on Ko-fi" src="https://github.com/user-attachments/assets/a9611d0c-848c-4da3-b7b6-908809afd924">
